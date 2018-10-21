@@ -1,0 +1,7 @@
+?
+.÷êWc           @   s?   d  d l  Z d  d l Z d  d l m Z d ?  Z d ?  Z e d k r? e ?  Z	 e ?  Z
+ e j e
+ j e	 d d d d	 ?d
+ d	 ?Z e j d e j e d	 e	 j d d	 ? e f d d d d d d d d ?d GHn  d S(   iˇˇˇˇN(   t   model_from_jsonc          C   s)   t  t d ? j ?  ? }  |  j d ? |  S(   Ns   model_architecture.jsons   model_weights.h5(   R    t   opent   readt   load_weights(   t   model(    (    s   test.pyt	   get_model   s    c          C   sQ   t  j d ? }  |  j } t j | d d ? } | j | j d d d d ? } | S(   Ns   Data/test.csvg      ?g     ‡o@i    i   i   (   t   pdt   read_csvt   valuest   npt   multiplyt   reshapet   shape(   t   datat   images(    (    s   test.pyt   get_mnist_test_data   s
+    	t   __main__t
+   batch_sizei2   t   verbosei   t   axiss   predictions.csvi    t	   delimitert   ,t   headers   ImageId,Labelt   commentst    t   fmts   %ds   Predictions File Generated!(   t   numpyR	   t   pandasR   t   keras.modelsR    R   R   t   __name__t   X_testR   t   argmaxt   predictt   y_testt   savetxtt   c_t   rangeR   (    (    (    s   test.pyt   <module>   s   				*I
